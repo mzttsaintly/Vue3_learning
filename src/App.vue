@@ -13,4 +13,11 @@ const msg = ref('this is a message from app.vue')
     <Com></Com>
     <PIS :msg_object="msg"></PIS>
     <PIA :msg_array="msg"></PIA>
+    <p>以下是路由测试</p>
+    <router-link to="/PFA">PFA</router-link>
+    <router-link to="/PIS/this is a message from app.vue">PIS</router-link>
+    <router-link to="/cp">Computed_Properties</router-link>
+    <router-link to="/dr">Declartative_rendering</router-link>
+    <br>
+    <Router-view></Router-view>
 </template>
