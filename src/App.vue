@@ -14,8 +14,9 @@ const msg = ref('this is a message from app.vue')
     <PIS :msg_object="msg"></PIS>
     <PIA :msg_array="msg"></PIA>
     <p>以下是路由测试</p>
-    <router-link to="/PFA">PFA</router-link>
-    <router-link to="/PIS/this is a message from app.vue">PIS</router-link>
+    <router-link to="/PFA/msg">PFA</router-link>
+    <!-- :to 的用法 有待研究 -->
+    <router-link :to="{path:'/PIS/' + msg}">PIS</router-link>
     <router-link to="/cp">Computed_Properties</router-link>
     <router-link to="/dr">Declartative_rendering</router-link>
     <br>
