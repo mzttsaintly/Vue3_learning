@@ -1,5 +1,8 @@
 <script setup>
 import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 const msg = ref('this is a message from app.vue')
 const items = ref([
     {title: '通过数组传递参数', link: '/PFA/' + msg.value},
@@ -10,24 +13,27 @@ const items = ref([
 ])
 const show_v_for = ref(true)
 const show_router = ref(false)
+function come_home() {
+    router.push('/')
+}
 </script>
 
 <template>
     <div class="main">
-        this is begin.
+        <p @click="come_home">this is begin.</p>
         <button @click="show_v_for = !show_v_for">{{ show_v_for ?'隐藏v-for测试': '显示v-for测试' }}</button>
         <!-- 按钮随条件变化而变化 -->
         <button @click="show_router = !show_router">{{ show_router ?'隐藏路由测试': '显示路由测试' }}</button>
         v-for 测试
-        <ol v-if="show_v_for" class="title">
+        <menu v-if="show_v_for" class="title">
             <li v-for="item in items">
                 <router-link :to="item.link">{{ item.title }}</router-link>
                 <!-- 也可写成 :to={path: item.link} -->
             </li>
-        </ol>
+        </menu>
         <p>以下是路由测试</p>
         <!-- 使用v-if 切换组件显示状态 -->
-        <div class="title" v-if="show_router">
+        <menu class="title" v-if="show_router">
             <!-- props参数会显示在url上 -->
             <router-link :to="'/PFA/' + msg">通过数组传递参数</router-link>
             <!-- :to 有两种写法 -->
@@ -35,7 +41,7 @@ const show_router = ref(false)
             <router-link to="/cp">计算属性</router-link>
             <router-link to="/dr">响应式渲染</router-link>
             <router-link :to="'/SBC'">样式和类绑定</router-link>
-        </div>
+        </menu>
         <br>
         <Router-view></Router-view>
     </div>
@@ -51,6 +57,5 @@ const show_router = ref(false)
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    flex: auto;
 }
 </style>
