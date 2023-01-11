@@ -35,12 +35,12 @@ function come_home() {
         <!-- 使用v-if 切换组件显示状态 -->
         <menu class="title" v-if="show_router">
             <!-- props参数会显示在url上 -->
-            <router-link :to="'/PFA/' + msg">通过数组传递参数</router-link>
+            <router-link :to="'/PFA/' + msg">· 通过数组传递参数</router-link>
             <!-- :to 有两种写法 -->
-            <router-link :to="{path:'/PIS/' + msg}">通过对象传递参数</router-link>
-            <router-link to="/cp">计算属性</router-link>
-            <router-link to="/dr">响应式渲染</router-link>
-            <router-link :to="'/SBC'">样式和类绑定</router-link>
+            <router-link :to="{path:'/PIS/' + msg}">· 通过对象传递参数</router-link>
+            <router-link to="/cp">· 计算属性</router-link>
+            <router-link to="/dr">· 响应式渲染</router-link>
+            <router-link :to="'/SBC'">· 样式和类绑定</router-link>
         </menu>
         <br>
         <Router-view></Router-view>
@@ -57,5 +57,6 @@ function come_home() {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around space-evenly;
 }
 </style>
