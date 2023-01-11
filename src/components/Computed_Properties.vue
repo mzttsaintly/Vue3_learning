@@ -1,5 +1,5 @@
 <script setup>
-// 用的官方文档中的例子
+// 计算属性 用的官方文档中的例子
 import {reactive, ref, computed} from 'vue'
 
 const author = reactive({
