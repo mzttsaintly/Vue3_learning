@@ -19,11 +19,12 @@ const show_router = ref(false)
         <!-- 按钮随条件变化而变化 -->
         <button @click="show_router = !show_router">{{ show_router ?'隐藏路由测试': '显示路由测试' }}</button>
         v-for 测试
-        <ul v-if="show_v_for">
+        <ol v-if="show_v_for" class="title">
             <li v-for="item in items">
-                <router-link :to="{path: item.link}">{{ item.title }}</router-link>
+                <router-link :to="item.link">{{ item.title }}</router-link>
+                <!-- 也可写成 :to={path: item.link} -->
             </li>
-        </ul>
+        </ol>
         <p>以下是路由测试</p>
         <!-- 使用v-if 切换组件显示状态 -->
         <div class="title" v-if="show_router">
@@ -50,6 +51,6 @@ const show_router = ref(false)
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    flex-grow: 1;
+    flex: auto;
 }
 </style>
