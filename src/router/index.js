@@ -7,6 +7,7 @@ import PIS from '../components/props/props_in_setup.vue'
 import CP from '../components/Computed_Properties.vue'
 import DR from '../components/Declartative_rendering.vue'
 import SBC from '../components/style_binding_class.vue'
+import FIB from '../components/Form_Input_Bindings.vue'
 
 const home = {template: ""}
 // 2. 定义一些路由
@@ -18,7 +19,8 @@ const routes = [
   { path: '/PIS/:msg_object', component: PIS, props: true },
   { path: '/cp', component: CP},
   { path: '/dr', component: DR},
-  { path: '/SBC', component: SBC}
+  { path: '/SBC', component: SBC},
+  { path: '/FIB', component: FIB}
 ]
 
 // 3. 创建路由实例并传递 `routes` 配置

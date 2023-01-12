@@ -9,7 +9,8 @@ const items = ref([
     {title: '通过对象传递参数', link: "/PIS/" + msg.value},
     {title: '计算属性', link: "/cp"},
     {title: '响应式渲染', link: "/dr"},
-    {title: '样式和类绑定', link: "/SBC"}
+    {title: '样式和类绑定', link: "/SBC"},
+    {title: '表单绑定', link: "/FIB"}
 ])
 const show_v_for = ref(true)
 const show_router = ref(false)
@@ -41,6 +42,7 @@ function come_home() {
             <router-link to="/cp">· 计算属性</router-link>
             <router-link to="/dr">· 响应式渲染</router-link>
             <router-link :to="'/SBC'">· 样式和类绑定</router-link>
+            <router-link :to="'FIB'">· 表单绑定</router-link>
         </menu>
         <br>
         <Router-view></Router-view>
