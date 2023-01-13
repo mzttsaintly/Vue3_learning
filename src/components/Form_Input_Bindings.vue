@@ -10,6 +10,8 @@ const name_list = ref([])
 // 官方推荐我们在定义数据的时候,reactive定义复杂的数据类型的数据,ref推荐定义基本数据类型
 const new_name = ref("")
 const chosen_name = ref([])
+const picked = ref("")
+const selected = ref("")
 
 function push_name() {
     // 使用ref包装的时候需要使用.value，使用reactive时则不需要
@@ -41,4 +43,19 @@ function push_name() {
     <input v-model="new_name" /><button @click="push_name">添加人员</button>
     <p>被选召的孩子们：</p>
     <div>{{ chosen_name }}</div>
+    <br>
+    <p>单选按钮</p>
+    <div>Picked: {{ picked }}</div>
+    <label><input type="radio" name="or" id="up" value="up" v-model="picked" checked>up</label>
+    <label><input type="radio" name="or" id="down" value="down" v-model="picked">down</label>
+    <br>
+    <p>单个选择：</p>
+    <div>selected:{{ selected }}</div>
+    <select v-model="selected">
+        <option value="" disabled>--please choose an option</option>
+        <option value="one">one</option>
+        <option value="two">two</option>
+        <option value="three">three</option>
+        <option v-for="ot in name_list" :value="ot">{{ ot }}</option>
+    </select>
     </template>
