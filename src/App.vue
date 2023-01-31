@@ -10,7 +10,8 @@ const items = ref([
     {title: '计算属性', link: "/cp"},
     {title: '响应式渲染', link: "/dr"},
     {title: '样式和类绑定', link: "/SBC"},
-    {title: '表单绑定', link: "/FIB"}
+    {title: '表单绑定', link: "/FIB"},
+    {title: '侦听器', link: "/WD"}
 ])
 const show_v_for = ref(true)
 const show_router = ref(false)

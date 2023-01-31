@@ -8,6 +8,7 @@ import CP from '../components/Computed_Properties.vue'
 import DR from '../components/Declartative_rendering.vue'
 import SBC from '../components/style_binding_class.vue'
 import FIB from '../components/Form_Input_Bindings.vue'
+import WD from '../components/watch_dog.vue'
 
 const home = {template: ""}
 // 2. 定义一些路由
@@ -20,7 +21,8 @@ const routes = [
   { path: '/cp', component: CP},
   { path: '/dr', component: DR},
   { path: '/SBC', component: SBC},
-  { path: '/FIB', component: FIB}
+  { path: '/FIB', component: FIB},
+  { path: '/WD', component: WD}
 ]
 
 // 3. 创建路由实例并传递 `routes` 配置
