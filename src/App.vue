@@ -44,6 +44,7 @@ function come_home() {
             <router-link to="/dr">· 响应式渲染</router-link>
             <router-link :to="'/SBC'">· 样式和类绑定</router-link>
             <router-link :to="'FIB'">· 表单绑定</router-link>
+            <router-link :to="'WD'">· 侦听器</router-link>
         </menu>
         <br>
         <Router-view></Router-view>
@@ -55,11 +56,15 @@ function come_home() {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 .title {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around space-evenly;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 </style>

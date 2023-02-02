@@ -7,8 +7,10 @@ const ans = ref('answer is ans');
 const img_path = ref('')
 
 // 可以直接侦听一个 ref
+// watch 的第一个参数可以是不同形式的“数据源”：它可以是一个 ref (包括计算属性)、一个响应式对象、一个 getter 函数、或多个数据源组成的数组：
+// 但不能直接侦听响应式对象的属性值
 watch(question, async (newQuestion) => {
-    if (newQuestion.indexOf('?') > -1) {
+    if (newQuestion.indexOf('?') > -1 || newQuestion.indexOf('？') > -1) {
         ans.value = 'Thinking...'
         try {
             const res = await fetch('https://yesno.wtf/api')
@@ -31,3 +33,11 @@ watch(question, async (newQuestion) => {
     <br />
     <img :src="img_path" />
 </template>
+
+<style>
+img {
+    height: auto;
+    width: auto;
+    width: 100%;
+}
+</style>
